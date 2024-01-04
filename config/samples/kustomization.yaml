@@ -1,0 +1,5 @@
+## Append samples of your project ##
+resources:
+- networking_v1alpha1_trafficsyncrequest.yaml
+- networking_v1alpha1_tagsyncrequest.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

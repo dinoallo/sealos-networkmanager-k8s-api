@@ -1,0 +1,31 @@
+# permissions for end users to edit tagsyncrequests.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: tagsyncrequest-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: nm-k8s-api
+    app.kubernetes.io/part-of: nm-k8s-api
+    app.kubernetes.io/managed-by: kustomize
+  name: tagsyncrequest-editor-role
+rules:
+- apiGroups:
+  - networking.sealos.io
+  resources:
+  - tagsyncrequests
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - networking.sealos.io
+  resources:
+  - tagsyncrequests/status
+  verbs:
+  - get
