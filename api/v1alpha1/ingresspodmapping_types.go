@@ -46,6 +46,7 @@ type IngressPodMappingStatus struct {
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
+//+kubebuilder:resource:shortName="ipm"
 
 // IngressPodMapping is the Schema for the ingresspodmappings API
 type IngressPodMapping struct {

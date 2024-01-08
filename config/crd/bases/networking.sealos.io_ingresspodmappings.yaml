@@ -11,6 +11,8 @@ spec:
     kind: IngressPodMapping
     listKind: IngressPodMappingList
     plural: ingresspodmappings
+    shortNames:
+    - ipm
     singular: ingresspodmapping
   scope: Namespaced
   versions:

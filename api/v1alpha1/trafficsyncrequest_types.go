@@ -48,7 +48,6 @@ type TrafficSyncRequestStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 //+kubebuilder:printcolumn:name="Pod",type=string,JSONPath=`.spec.associatedPod`
-//+kubebuilder:printcolumn:name="Addresses",type=array,JSONPath=`.spec.addresses`
 //+kubebuilder:printcolumn:name="Node",type=string,JSONPath=`.spec.nodeIP`
 //+kubebuilder:resource:shortName="tsr"
 

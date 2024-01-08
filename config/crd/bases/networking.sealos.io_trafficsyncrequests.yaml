@@ -20,9 +20,6 @@ spec:
     - jsonPath: .spec.associatedPod
       name: Pod
       type: string
-    - jsonPath: .spec.addresses
-      name: Addresses
-      type: array
     - jsonPath: .spec.nodeIP
       name: Node
       type: string
