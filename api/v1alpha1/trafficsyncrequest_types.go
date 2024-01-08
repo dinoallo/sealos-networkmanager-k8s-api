@@ -33,7 +33,7 @@ type TrafficSyncRequestSpec struct {
 	AssociatedPod       string          `json:"associatedPod,omitempty"`
 	CiliumEndpointID    int64           `json:"ciliumEndpointID,omitempty"`
 	NodeIP              string          `json:"nodeIP,omitempty"`
-	Address             string          `json:"address,omitempty"`
+	Addresses           []string        `json:"addresses,omitempty"`
 	Tags                []string        `json:"tags,omitempty"`
 	SyncPeriod          metav1.Duration `json:"syncPeriod,omitempty"`
 }
@@ -48,7 +48,7 @@ type TrafficSyncRequestStatus struct {
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 //+kubebuilder:printcolumn:name="Pod",type=string,JSONPath=`.spec.associatedPod`
-//+kubebuilder:printcolumn:name="Address",type=string,JSONPath=`.spec.address`
+//+kubebuilder:printcolumn:name="Addresses",type=array,JSONPath=`.spec.addresses`
 //+kubebuilder:printcolumn:name="Node",type=string,JSONPath=`.spec.nodeIP`
 //+kubebuilder:resource:shortName="tsr"
 

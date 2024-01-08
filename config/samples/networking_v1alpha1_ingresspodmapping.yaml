@@ -1,0 +1,12 @@
+apiVersion: networking.sealos.io/v1alpha1
+kind: IngressPodMapping
+metadata:
+  labels:
+    app.kubernetes.io/name: ingresspodmapping
+    app.kubernetes.io/instance: ingresspodmapping-sample
+    app.kubernetes.io/part-of: nm-k8s-api
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: nm-k8s-api
+  name: ingresspodmapping-sample
+spec:
+  # TODO(user): Add fields here

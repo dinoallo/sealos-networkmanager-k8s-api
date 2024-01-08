@@ -20,9 +20,9 @@ spec:
     - jsonPath: .spec.associatedPod
       name: Pod
       type: string
-    - jsonPath: .spec.address
-      name: Address
-      type: string
+    - jsonPath: .spec.addresses
+      name: Addresses
+      type: array
     - jsonPath: .spec.nodeIP
       name: Node
       type: string
@@ -47,8 +47,10 @@ spec:
           spec:
             description: TrafficSyncRequestSpec defines the desired state of TrafficSyncRequest
             properties:
-              address:
-                type: string
+              addresses:
+                items:
+                  type: string
+                type: array
               associatedNamespace:
                 description: Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go
                   to remove/update

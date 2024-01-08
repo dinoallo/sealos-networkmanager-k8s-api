@@ -2,4 +2,5 @@
 resources:
 - networking_v1alpha1_trafficsyncrequest.yaml
 - networking_v1alpha1_tagsyncrequest.yaml
+- networking_v1alpha1_ingresspodmapping.yaml
 #+kubebuilder:scaffold:manifestskustomizesamples
