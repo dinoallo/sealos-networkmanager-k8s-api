@@ -20,8 +20,11 @@ spec:
     - jsonPath: .spec.associatedPod
       name: Pod
       type: string
-    - jsonPath: .spec.nodeIP
-      name: Node
+    - jsonPath: .spec.address
+      name: AddressToSync
+      type: string
+    - jsonPath: .spec.tag
+      name: TagToSync
       type: string
     name: v1alpha1
     schema:
@@ -44,39 +47,30 @@ spec:
           spec:
             description: TrafficSyncRequestSpec defines the desired state of TrafficSyncRequest
             properties:
-              addresses:
-                items:
-                  type: string
-                type: array
+              address:
+                type: string
               associatedNamespace:
                 description: Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go
                   to remove/update
                 type: string
               associatedPod:
                 type: string
-              ciliumEndpointID:
-                format: int64
-                type: integer
               nodeIP:
                 type: string
               syncPeriod:
                 type: string
-              tags:
-                items:
-                  type: string
-                type: array
+              tag:
+                type: string
             type: object
           status:
             description: TrafficSyncRequestStatus defines the observed state of TrafficSyncRequest
             properties:
               lastSyncTime:
-                additionalProperties:
-                  format: date-time
-                  type: string
                 description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
                   of cluster Important: Run "make" to regenerate code after modifying
                   this file'
-                type: object
+                format: date-time
+                type: string
             type: object
         type: object
     served: true

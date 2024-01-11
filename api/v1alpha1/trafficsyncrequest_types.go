@@ -31,10 +31,9 @@ type TrafficSyncRequestSpec struct {
 	// Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go to remove/update
 	AssociatedNamespace string          `json:"associatedNamespace,omitempty"`
 	AssociatedPod       string          `json:"associatedPod,omitempty"`
-	CiliumEndpointID    int64           `json:"ciliumEndpointID,omitempty"`
 	NodeIP              string          `json:"nodeIP,omitempty"`
-	Addresses           []string        `json:"addresses,omitempty"`
-	Tags                []string        `json:"tags,omitempty"`
+	Address             string          `json:"address,omitempty"`
+	Tag                 string          `json:"tag,omitempty"`
 	SyncPeriod          metav1.Duration `json:"syncPeriod,omitempty"`
 }
 
@@ -42,13 +41,14 @@ type TrafficSyncRequestSpec struct {
 type TrafficSyncRequestStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
-	LastSyncTime map[string]metav1.Time `json:"lastSyncTime,omitempty"`
+	LastSyncTime metav1.Time `json:"lastSyncTime,omitempty"`
 }
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 //+kubebuilder:printcolumn:name="Pod",type=string,JSONPath=`.spec.associatedPod`
-//+kubebuilder:printcolumn:name="Node",type=string,JSONPath=`.spec.nodeIP`
+//+kubebuilder:printcolumn:name="AddressToSync",type=string,JSONPath=`.spec.address`
+//+kubebuilder:printcolumn:name="TagToSync",type=string,JSONPath=`.spec.tag`
 //+kubebuilder:resource:shortName="tsr"
 
 // TrafficSyncRequest is the Schema for the trafficsyncrequests API
