@@ -57,6 +57,10 @@ spec:
                 type: string
               nodeIP:
                 type: string
+              podType:
+                type: integer
+              podTypeName:
+                type: string
               syncPeriod:
                 type: string
               tag:

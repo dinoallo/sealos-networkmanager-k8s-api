@@ -31,6 +31,8 @@ type TrafficSyncRequestSpec struct {
 	// Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go to remove/update
 	AssociatedNamespace string          `json:"associatedNamespace,omitempty"`
 	AssociatedPod       string          `json:"associatedPod,omitempty"`
+	PodType             int             `json:"podType,omitempty"`
+	PodTypeName         string          `json:"podTypeName,omitempty"`
 	NodeIP              string          `json:"nodeIP,omitempty"`
 	Address             string          `json:"address,omitempty"`
 	Tag                 string          `json:"tag,omitempty"`
