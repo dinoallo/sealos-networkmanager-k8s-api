@@ -22,6 +22,25 @@ import (
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
+type POD_TYPE int64
+
+const (
+	POD_TYPE_UNKNOWN POD_TYPE = iota
+	POD_TYPE_DB
+	POD_TYPE_APP
+	POD_TYPE_TERMINAL
+	POD_TYPE_JOB
+	POD_TYPE_OTHER
+	POD_TYPE_OBJECTSTORAGE
+
+	CHECK_DB_LABEL_KEY       = "apps.kubeblocks.io/component-name"
+	CHECK_TERMINAL_LABEL_KEY = "TerminalID"
+	CHECK_APP_LABEL_KEY      = "app"
+	CHECK_JOB_LABEL_KEY      = "job-name"
+	DB_TYPE_LABEL_KEY        = "apps.kubernetes.io/instance"
+	APP_TYPE_LABEL_KEY       = "app"
+	JOB_TYPE_LABEL_KEY       = "job-name"
+)
 
 // TrafficSyncRequestSpec defines the desired state of TrafficSyncRequest
 type TrafficSyncRequestSpec struct {
@@ -31,7 +50,7 @@ type TrafficSyncRequestSpec struct {
 	// Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go to remove/update
 	AssociatedNamespace string          `json:"associatedNamespace,omitempty"`
 	AssociatedPod       string          `json:"associatedPod,omitempty"`
-	PodType             int             `json:"podType,omitempty"`
+	PodType             POD_TYPE        `json:"podType,omitempty"`
 	PodTypeName         string          `json:"podTypeName,omitempty"`
 	NodeIP              string          `json:"nodeIP,omitempty"`
 	Address             string          `json:"address,omitempty"`
