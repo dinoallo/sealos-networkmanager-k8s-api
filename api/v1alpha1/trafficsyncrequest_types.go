@@ -20,8 +20,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 type POD_TYPE int64
 
 const (
@@ -44,10 +42,6 @@ const (
 
 // TrafficSyncRequestSpec defines the desired state of TrafficSyncRequest
 type TrafficSyncRequestSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go to remove/update
 	AssociatedNamespace string          `json:"associatedNamespace,omitempty"`
 	AssociatedPod       string          `json:"associatedPod,omitempty"`
 	PodType             POD_TYPE        `json:"podType,omitempty"`
@@ -60,8 +54,6 @@ type TrafficSyncRequestSpec struct {
 
 // TrafficSyncRequestStatus defines the observed state of TrafficSyncRequest
 type TrafficSyncRequestStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 	LastSyncTime metav1.Time `json:"lastSyncTime,omitempty"`
 }
 

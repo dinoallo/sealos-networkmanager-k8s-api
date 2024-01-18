@@ -50,17 +50,12 @@ spec:
               address:
                 type: string
               associatedNamespace:
-                description: Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go
-                  to remove/update
                 type: string
               associatedPod:
                 type: string
               nodeIP:
                 type: string
               podType:
-                description: 'EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-                  NOTE: json tags are required.  Any new fields you add must have
-                  json tags for the fields to be serialized.'
                 format: int64
                 type: integer
               podTypeName:
@@ -74,9 +69,6 @@ spec:
             description: TrafficSyncRequestStatus defines the observed state of TrafficSyncRequest
             properties:
               lastSyncTime:
-                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                  of cluster Important: Run "make" to regenerate code after modifying
-                  this file'
                 format: date-time
                 type: string
             type: object

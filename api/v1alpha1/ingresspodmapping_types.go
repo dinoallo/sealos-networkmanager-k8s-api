@@ -21,8 +21,6 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-// EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-// NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 type Backend struct {
 	Name    string                    `json:"name,omitempty"`
 	PodRefs []*corev1.ObjectReference `json:"podRefs,omitempty"`
@@ -31,22 +29,18 @@ type Backend struct {
 
 // IngressPodMappingSpec defines the desired state of IngressPodMapping
 type IngressPodMappingSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
 	Ingress  string    `json:"ingress,omitempty"`
 	Backends []Backend `json:"backends,omitempty"`
 }
 
 // IngressPodMappingStatus defines the observed state of IngressPodMapping
 type IngressPodMappingStatus struct {
-	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
 }
 
 //+kubebuilder:object:root=true
 //+kubebuilder:subresource:status
 //+kubebuilder:resource:shortName="ipm"
+//+kubebuilder:printcolumn:name="ingress",type=string,JSONPath=`.spec.ingress`
 
 // IngressPodMapping is the Schema for the ingresspodmappings API
 type IngressPodMapping struct {

@@ -25,7 +25,11 @@ spec:
     singular: ingresspodmapping
   scope: Namespaced
   versions:
-  - name: v1alpha1
+  - additionalPrinterColumns:
+    - jsonPath: .spec.ingress
+      name: ingress
+      type: string
+    name: v1alpha1
     schema:
       openAPIV3Schema:
         description: IngressPodMapping is the Schema for the ingresspodmappings API
@@ -47,9 +51,6 @@ spec:
             properties:
               backends:
                 items:
-                  description: 'EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
-                    NOTE: json tags are required.  Any new fields you add must have
-                    json tags for the fields to be serialized.'
                   properties:
                     name:
                       type: string
@@ -238,12 +239,15 @@ spec:
               address:
                 type: string
               associatedNamespace:
-                description: Foo is an example field of TrafficSyncRequest. Edit trafficsyncrequest_types.go
-                  to remove/update
                 type: string
               associatedPod:
                 type: string
               nodeIP:
+                type: string
+              podType:
+                format: int64
+                type: integer
+              podTypeName:
                 type: string
               syncPeriod:
                 type: string
@@ -254,9 +258,6 @@ spec:
             description: TrafficSyncRequestStatus defines the observed state of TrafficSyncRequest
             properties:
               lastSyncTime:
-                description: 'INSERT ADDITIONAL STATUS FIELD - define observed state
-                  of cluster Important: Run "make" to regenerate code after modifying
-                  this file'
                 format: date-time
                 type: string
             type: object
