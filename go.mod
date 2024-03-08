@@ -3,6 +3,9 @@ module github.com/dinoallo/sealos-networkmanager-k8s-api
 go 1.21
 
 require (
+	github.com/go-faker/faker/v4 v4.3.0
+	github.com/matryer/is v1.4.1
+	github.com/sqids/sqids-go v0.4.1
 	k8s.io/api v0.28.3
 	k8s.io/apimachinery v0.28.3
 	sigs.k8s.io/controller-runtime v0.16.3
