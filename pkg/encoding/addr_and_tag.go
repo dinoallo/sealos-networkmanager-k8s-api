@@ -19,6 +19,10 @@ type AT struct {
 	Tag    taglib.TagID
 }
 
+func (code *ATCode) String() string {
+	return string(*code)
+}
+
 func (code *ATCode) Decode() (*AT, error) {
 	id := string(*code)
 	s, err := sqids.New(sqids.Options{Alphabet: sqidAlphabet})
